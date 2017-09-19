@@ -1,19 +1,24 @@
 import C from './constants'
-import { skiDay } from './store/reducers'
+import { errors } from './store/reducers'
 
-const state = null
+const state = [
+	"user not authorized",
+	"Server feed not found"
+]
 
 const action = {
-	type: C.ADD_DAY,
-	payload: {
-			"resort": "Heavenly",
-			"date": "2016-12-16",
-			"powder": true,
-			"backcountry": false
-		}
+	type: C.ADD_ERROR,
+	payload: "Cannot connect to server"
 }
 
-const nextState = skiDay(state, action)
+const clearAction = {
+	type: C.CLEAR_ERROR,
+	payload: 0
+}
+
+
+
+const nextState = errors(state, clearAction)
 
 console.log(`
 
