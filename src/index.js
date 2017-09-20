@@ -1,47 +1,20 @@
 import C from './constants'
 import initialstate from './initialstate.json'
 import appReducer  from './store/reducers'
+import { createStore } from 'redux'
 
-let state = initialstate
+const store = createStore(appReducer, initialstate)
 
-console.log(`
+console.log('initial state', store.getState())
 
-		Initial state
-		=============
-		goal: ${state.goal}
-		resorts: ${JSON.stringify(state.allSkiDays)}
-		fetching: ${state.resortNames.fetching}
-		suggestions: ${state.resortNames.suggestions}
-
-	`)
-
-state = appReducer(state, {
-	type: C.SET_GOAL,
-	payload: 2
-})
-
-state = appReducer(state, {
+store.dispatch({
 	type: C.ADD_DAY,
 	payload: {
-			"resort": "Mt Shasta",
-			"date": "2016-10-28",
-			"powder": false,
-			"backcountry": true
-		}
+		resort: "Mt Shasta",
+		date: "2016-10-28",
+		powder: false,
+		backcountry: true
+	}
 })
 
-state = appReducer(state, {
-	type: C.CHANGE_SUGGESTION,
-	payload: ['Mt Tallac', 'Mt Hood', 'Mt Shasta']
-})
-
-console.log(`
-
-		Next state
-		=============
-		goal: ${state.goal}
-		resorts: ${JSON.stringify(state.allSkiDays)}
-		fetching: ${state.resortNames.fetching}
-		suggestions: ${state.resortNames.suggestions}
-		
-	`)
+console.log('next state', store.getState())
