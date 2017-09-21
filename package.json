@@ -6,7 +6,7 @@
   "scripts": {
     "suggestions": "babel-node ./server --port 3333 --delay 500",
     "start": "webpack-dev-server"
-   },
+  },
   "keywords": [
     "activity",
     "counter",
@@ -15,7 +15,7 @@
     "tutorial",
     "redux"
   ],
- "author": "Bolatan Ibrahim <ehbraheem@gmail.com>",
+  "author": "Bolatan Ibrahim <ehbraheem@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Ehbraheem/ski-day-redux/issues"
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Ehbraheem/ski-day-redux#readme",
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
